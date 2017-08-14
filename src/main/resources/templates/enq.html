@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymleaf.org">
+<head>
+<title>Kh@api</title>
+
+<!-- CSS -->
+<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link href="css/starter-template.css" rel="stylesheet" />
+
+<!-- JavaScript -->
+<script src="webjars/jquery/2.1.4/jquery.min.js"
+	type="application/javascript"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Kha API</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li><a href="/news">News</a></li>
+					<li><a href="/news-pull">Get News</a></li>
+					<li><a href="/food">Food</a></li>
+					<li><a href="/hindu">Hindu</a></li>
+					<li><a href="/news3">news3</a></li>
+					<li><a href="/enq">enq</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	<div class="container">
+		<h1>Enquiry Form</h1>
+		<div class="starter-template" align="left">
+
+			<form th:action="@{/enq}" th:object="${pr}" method="post">
+
+
+				<table>
+					<tr align="left">
+						<td>First Name:</td>
+						<td><input type="text" th:field="*{fname}" /></td>
+					</tr>
+					<tr align="left">
+						<td>Last Name:</td>
+						<td><input type="text" th:field="*{lname}" /></td>
+					</tr>
+
+
+					<tr align="left">
+						<td>Address:</td>
+						<td><input type="text" th:field="*{address}" /></td>
+					</tr>
+					<tr align="left">
+						<td>Age:</td>
+						<td><input type="text" th:field="*{age}" /></td>
+					</tr>
+
+
+					<tr align="left">
+						<td>Phone:</td>
+						<td><input type="text" th:field="*{phone}" /></td>
+					</tr>
+					<tr align="left">
+						<td>Email:</td>
+						<td><input type="text" th:field="*{email}" /></td>
+					</tr>
+
+
+					<tr align="left">
+						<td><input type="submit" value="Submit" /></td>
+						<td><input type="reset" value="Reset" /></td>
+					</tr>
+				</table>
+
+			</form>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
